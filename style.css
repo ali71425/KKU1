@@ -1,0 +1,515 @@
+:root {
+  --kku-green: #006c45;
+  --kku-green-dark: #005338;
+  --kku-green-light: #eaf5f0;
+
+  --text: #202520;
+  --muted: #6d756f;
+  --border: #dfe6e2;
+
+  --background: #f5f8f6;
+  --white: #ffffff;
+
+  --danger: #a62b2b;
+  --danger-bg: #fff1f1;
+
+  --shadow:
+    0 18px 50px rgba(0, 70, 45, 0.10);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  min-height: 100%;
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family:
+    "Tahoma",
+    "Arial",
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #ffffff 0%,
+      var(--background) 60%
+    );
+
+  color: var(--text);
+}
+
+
+.page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 16px;
+}
+
+
+.portal-card {
+  width: 100%;
+  max-width: 620px;
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+}
+
+
+.header {
+  text-align: center;
+
+  padding:
+    35px
+    30px
+    25px;
+}
+
+
+.university-logo {
+  display: block;
+
+  max-width: 210px;
+  max-height: 115px;
+
+  width: auto;
+  height: auto;
+
+  margin:
+    0
+    auto
+    20px;
+}
+
+
+.university-info h1 {
+  margin:
+    0
+    0
+    8px;
+
+  color: var(--kku-green);
+
+  font-size: 25px;
+}
+
+
+.university-info p {
+  margin: 5px 0;
+
+  font-size: 16px;
+
+  color: #353b37;
+}
+
+
+.divider {
+  width: 80px;
+  height: 4px;
+
+  margin: 0 auto;
+
+  background: var(--kku-green);
+
+  border-radius: 10px;
+}
+
+
+.content {
+  padding:
+    28px
+    40px
+    35px;
+}
+
+
+.title-icon {
+  width: 48px;
+  height: 48px;
+
+  margin:
+    0
+    auto
+    12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--kku-green-light);
+
+  color: var(--kku-green);
+
+  border-radius: 50%;
+
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.content h2 {
+  margin:
+    0
+    0
+    10px;
+
+  text-align: center;
+
+  color: var(--kku-green);
+
+  font-size: 25px;
+}
+
+
+.description {
+  text-align: center;
+
+  color: var(--muted);
+
+  margin:
+    0
+    0
+    28px;
+
+  line-height: 1.8;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+label {
+  font-weight: 700;
+
+  font-size: 15px;
+}
+
+
+input {
+  width: 100%;
+
+  padding:
+    15px
+    16px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 12px;
+
+  font-size: 16px;
+
+  direction: ltr;
+  text-align: left;
+
+  outline: none;
+
+  transition:
+    border-color .2s,
+    box-shadow .2s;
+}
+
+
+input:focus {
+  border-color: var(--kku-green);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(0, 108, 69, 0.10);
+}
+
+
+button,
+.download-button {
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 12px;
+
+  background: var(--kku-green);
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition:
+    background .2s,
+    transform .1s;
+}
+
+
+button {
+  margin-top: 8px;
+}
+
+
+button:hover,
+.download-button:hover {
+  background: var(--kku-green-dark);
+}
+
+
+button:active,
+.download-button:active {
+  transform: scale(.99);
+}
+
+
+button:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+
+.loading {
+  margin-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  color: var(--muted);
+}
+
+
+.spinner {
+  width: 20px;
+  height: 20px;
+
+  border:
+    3px solid
+    #dce7e1;
+
+  border-top-color:
+    var(--kku-green);
+
+  border-radius: 50%;
+
+  animation:
+    spin .8s
+    linear
+    infinite;
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.message {
+  margin-top: 22px;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  line-height: 1.7;
+}
+
+
+.message.error {
+  background: var(--danger-bg);
+
+  color: var(--danger);
+
+  border:
+    1px solid
+    #f0cccc;
+}
+
+
+.result {
+  margin-top: 28px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  background:
+    var(--kku-green-light);
+
+  border:
+    1px solid
+    #cfe4da;
+
+  border-radius: 18px;
+}
+
+
+.success-mark {
+  width: 46px;
+  height: 46px;
+
+  margin:
+    0
+    auto
+    10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--kku-green);
+
+  color: white;
+
+  border-radius: 50%;
+
+  font-size: 23px;
+  font-weight: bold;
+}
+
+
+.found-text {
+  margin:
+    0
+    0
+    10px;
+
+  color: var(--kku-green);
+
+  font-weight: 700;
+}
+
+
+.result h3 {
+  margin:
+    8px
+    0;
+
+  font-size: 22px;
+
+  color: var(--text);
+}
+
+
+.person-type {
+  margin:
+    0
+    0
+    20px;
+
+  color: var(--muted);
+}
+
+
+.download-button {
+  width: 100%;
+}
+
+
+footer {
+  padding:
+    17px
+    20px;
+
+  text-align: center;
+
+  background: #fafcfb;
+
+  border-top:
+    1px solid
+    var(--border);
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+footer p {
+  margin: 0;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+@media (max-width: 600px) {
+
+  .page {
+    padding:
+      15px
+      10px;
+  }
+
+  .portal-card {
+    border-radius: 18px;
+  }
+
+  .header {
+    padding:
+      27px
+      20px
+      20px;
+  }
+
+  .university-logo {
+    max-width: 175px;
+  }
+
+  .university-info h1 {
+    font-size: 22px;
+  }
+
+  .university-info p {
+    font-size: 14px;
+  }
+
+  .content {
+    padding:
+      25px
+      20px
+      30px;
+  }
+
+  .content h2 {
+    font-size: 22px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+}

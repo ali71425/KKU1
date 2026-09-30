@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>بوابة الشهادات | جامعة الملك خالد</title>
+
+  <meta
+    name="description"
+    content="بوابة الاستعلام عن الشهادات الإلكترونية - جامعة الملك خالد"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="page">
+
+    <section class="portal-card">
+
+      <header class="header">
+
+        <!--
+          ضع شعار الجامعة داخل المستودع باسم:
+          logo.png
+        -->
+        <img
+          src="logo.png"
+          alt="جامعة الملك خالد"
+          class="university-logo"
+        >
+
+        <div class="university-info">
+          <h1>جامعة الملك خالد</h1>
+          <p>كلية الآداب والعلوم الإنسانية</p>
+          <p>قسم اللغة العربية وآدابها</p>
+        </div>
+
+      </header>
+
+      <div class="divider"></div>
+
+      <section class="content">
+
+        <div class="title-icon">✓</div>
+
+        <h2>بوابة الشهادات الإلكترونية</h2>
+
+        <p class="description">
+          أدخل البريد الإلكتروني المسجل للحصول على شهادتك
+        </p>
+
+
+        <form id="certificateForm">
+
+          <label for="email">
+            البريد الإلكتروني
+          </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="example@kku.edu.sa"
+            maxlength="150"
+            required
+          >
+
+          <button
+            id="searchButton"
+            type="submit"
+          >
+            استعلام عن الشهادة
+          </button>
+
+        </form>
+
+
+        <div
+          id="loading"
+          class="loading hidden"
+          aria-live="polite"
+        >
+          <span class="spinner"></span>
+          جارٍ البحث عن الشهادة...
+        </div>
+
+
+        <div
+          id="message"
+          class="message hidden"
+          role="alert"
+        ></div>
+
+
+        <section
+          id="result"
+          class="result hidden"
+          aria-live="polite"
+        >
+
+          <div class="success-mark">✓</div>
+
+          <p class="found-text">
+            تم العثور على الشهادة
+          </p>
+
+          <h3 id="personName"></h3>
+
+          <p
+            id="personType"
+            class="person-type"
+          ></p>
+
+          <a
+            id="certificateButton"
+            class="download-button"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            عرض وتحميل الشهادة
+          </a>
+
+        </section>
+
+      </section>
+
+      <footer>
+        <p>
+          جامعة الملك خالد ©
+          <span id="year"></span>
+        </p>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
